@@ -1,0 +1,30 @@
+apply plugin: 'java'
+
+buildscript {
+   repositories {
+      jcenter()
+   }
+   dependencies {
+      classpath "io.ratpack:ratpack-gradle:0.9.19"
+   }
+}
+
+apply plugin: "io.ratpack.ratpack-java"
+
+repositories {
+   jcenter()
+   flatDir {
+      dirs 'lib'
+   }
+}
+
+dependencies {
+   runtime "org.slf4j:slf4j-simple:1.7.12"
+   compile 'org.codehaus.groovy:groovy-all:2.4.3'
+   compile 'javax.mail:mail:1.4.7'
+   compile 'javax.mail:javax.mail-api:1.5.4'
+   compile 'com.google.code.gson:gson:2.3.1'
+   compile name: 'gmail-sender'
+}
+
+mainClassName = "com.deigote.gmailSender.GmailSenderMicroService"
