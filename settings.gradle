@@ -16,4 +16,4 @@ include 'api'
 include 'services:webservice'
 */
 
-rootProject.name = 'gmail-sender-microservice'
+rootProject.name = 'gmail-sender-aas'
