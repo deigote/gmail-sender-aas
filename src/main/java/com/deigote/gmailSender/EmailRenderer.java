@@ -8,6 +8,7 @@ import ratpack.render.RendererSupport;
 import java.util.Collections;
 
 public class EmailRenderer extends RendererSupport<Email> {
+
    @Override
    public void render(Context context, Email email) throws Exception {
       context.getResponse()

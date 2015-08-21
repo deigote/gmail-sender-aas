@@ -19,8 +19,6 @@ import com.google.gson.Gson;
 
 public class GmailSenderMicroService {
 
-   private static final Status BAD_REQUEST = Status.of(400);
-
    private static Email sendEmail(EmailInput input) {
       return GmailSender.getInstance().send(input.email, input.credentials);
    }
@@ -35,10 +33,10 @@ public class GmailSenderMicroService {
                   ctx.getRequest().getBody()
                      .map(body -> body.getText())
                      .map(EmailInput::buildFromJson)
-                     .wiretap(promise -> System.out.println(promise.toString()))
+                     .wiretap(result -> System.out.println(result.getValue().toString()))
                      .flatMap(input -> Blocking.get(() -> sendEmail(input)))
                      .then(email -> ctx.render(email))
-            )
+               )
          )
       );
    }
