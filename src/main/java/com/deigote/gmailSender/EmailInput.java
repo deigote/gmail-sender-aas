@@ -4,6 +4,8 @@ import com.google.gson.Gson;
 
 public class EmailInput {
 
+   private static final Gson GSON = new Gson();
+
    final Email email;
    final Credentials credentials;
 
@@ -14,8 +16,8 @@ public class EmailInput {
 
    static EmailInput buildFromJson(String json) {
       return new EmailInput(
-         new Gson().fromJson(json, Email.class),
-         new Gson().fromJson(json, Credentials.class)
+         GSON.fromJson(json, Email.class).validateOrFail(),
+         GSON.fromJson(json, Credentials.class).validateOrFail()
       );
    }
 
