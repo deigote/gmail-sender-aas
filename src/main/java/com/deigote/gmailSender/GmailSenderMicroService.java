@@ -1,21 +1,7 @@
 package com.deigote.gmailSender;
 
-import groovy.json.JsonOutput;
-import groovy.lang.Closure;
-import ratpack.error.ServerErrorHandler;
 import ratpack.exec.Blocking;
-import ratpack.exec.Promise;
-import ratpack.func.Factory;
-import ratpack.func.Function;
-import ratpack.http.MediaType;
-import ratpack.http.Status;
 import ratpack.server.RatpackServer;
-
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Map;
-
-import com.google.gson.Gson;
 
 public class GmailSenderMicroService {
 
