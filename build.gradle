@@ -13,8 +13,8 @@ apply plugin: "io.ratpack.ratpack-java"
 
 repositories {
    jcenter()
-   flatDir {
-      dirs 'lib'
+   maven {
+      url 'http://deigote.github.io/maven/'
    }
 }
 
@@ -24,7 +24,7 @@ dependencies {
    compile 'javax.mail:mail:1.4.7'
    compile 'javax.mail:javax.mail-api:1.5.4'
    compile 'com.google.code.gson:gson:2.3.1'
-   compile name: 'gmail-sender'
+   compile 'com.deigote:gmail-sender:0.1'
 }
 
 mainClassName = "com.deigote.gmailSender.GmailSenderMicroService"
