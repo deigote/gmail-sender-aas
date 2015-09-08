@@ -13,7 +13,4 @@ public class ExceptionToResponseErrorHandler implements ServerErrorHandler {
       context.render(throwable);
    }
 
-   Action<RegistrySpec> register() {
-      return (registrySpec) -> registrySpec.add(ServerErrorHandler.class, this);
-   }
 }
