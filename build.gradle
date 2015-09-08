@@ -27,4 +27,9 @@ dependencies {
    compile 'com.deigote:gmail-sender:0.1'
 }
 
+
+task wrapper(type: Wrapper) {
+   gradleVersion = '2.6'
+}
+
 mainClassName = "com.deigote.gmailSender.GmailSenderMicroService"
