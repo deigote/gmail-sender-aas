@@ -23,9 +23,10 @@ public class EmailInput {
 
    public String toString() {
       return "EmailInput(email: "
-         .concat(credentials.toString())
+         .concat(credentials != null ? "Credentials(******)" : "null")
          .concat(", ")
          .concat(email.toString())
          .concat(")");
    }
+
 }
